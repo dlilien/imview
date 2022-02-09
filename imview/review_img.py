@@ -3,6 +3,7 @@
 Simple interactive image viewer to generate good/bad lists from input list of filenames
 """
 
+from __future__ import print_function
 import sys
 import os
 import argparse
@@ -62,8 +63,8 @@ def main():
 
     fn_list = args.fn_list
 
-    print
-    print "Reviewing %i images" % len(fn_list)
+    print('')
+    print("Reviewing %i images" % len(fn_list))
     print
 
     good = []
@@ -88,7 +89,7 @@ def main():
     basic = False 
 
     for fn in fn_list:
-        print fn
+        print(fn)
         plt.clf()
         if basic:
             im = mpimg.imread(fn) 
@@ -123,13 +124,13 @@ def main():
 
     plt.close()
 
-    print
-    print "Good: %i" % (len(good))
-    print good
-    print
-    print "Bad: %i" % (len(bad))
-    print bad 
-    print
+    print('')
+    print("Good: %i" % (len(good)))
+    print(good)
+    print('')
+    print("Bad: %i" % (len(bad)))
+    print(bad)
+    print('')
 
     good_f.close()
     bad_f.close()
